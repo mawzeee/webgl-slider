@@ -2265,7 +2265,7 @@ class Sketch {
   
   
       this.container = document.getElementById("slider");
-      this.images = JSON.parse(this.container.getAttribute('data-images'));
+	  this.images = this.container.getAttribute('data-images').split(',').map(url => url.trim());
       this.width = this.container.offsetWidth;
       this.height = this.container.offsetHeight;
       this.container.appendChild(this.renderer.domElement);
